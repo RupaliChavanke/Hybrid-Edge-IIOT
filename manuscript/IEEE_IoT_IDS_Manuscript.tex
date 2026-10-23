@@ -14,7 +14,7 @@
 \title{Empirical Feature-Collision Analysis, Leakage-Safe\\Optimization, and Calibrated Boosting Ensembles\\for IoT/IIoT Intrusion Detection}
 
 \author{Principal Cybersecurity and Machine Learning Research Audit Group%
-\thanks{Manuscript received October 23, 2026; revised October 24, 2026. All experimental data, cryptographic SHA-256 artifact digests, model checkpoints, prediction matrices, and statistical validation scripts are archived and reproducible under the locked evaluation repository suite (\texttt{experiments/verified\_experiment\_matrix\_E1\_to\_E12.json}).}}
+\thanks{Manuscript received October 23, 2026; revised October 24, 2026. All experimental data, cryptographic SHA-256 artifact digests, model checkpoints, prediction matrices, and statistical validation scripts are archived and reproducible under the project repository: \url{https://github.com/RupaliChavanke/Hybrid-Edge-IIOT.git}.}}
 
 \begin{document}
 
@@ -323,6 +323,8 @@ Table~\ref{tab:dataset_stats} details the exact sample counts across all 15 nati
 14 & \texttt{XSS} & 7,036 & 1,508 & 1,508 & 10,052 & 6.37 & \texttt{Web\_Attack} & \texttt{XSS}, \texttt{BrowserHijacking} \\
 \midrule
 \multicolumn{2}{l}{\textbf{Total Partition Records}} & \textbf{110,460} & \textbf{23,670} & \textbf{23,670} & \textbf{157,800} & \textbf{100.00} & \textbf{10 Shared Classes} & \textbf{Stratified Benchmark Subset: $N=25,000$ per domain} \\
+\midrule
+\multicolumn{9}{l}{\footnotesize Repository validation paths: \texttt{data/processed/edge\_iiot\_processed.npz} and \texttt{reports/split\_audit.csv}.} \\
 \bottomrule
 \end{tabular}}
 \end{table*}
@@ -350,7 +352,8 @@ Table~\ref{tab:dataset_stats} details the exact sample counts across all 15 nati
 \texttt{time\_delta} & \texttt{udp.time\_delta} & \texttt{IAT} & Seconds ($\mathbb{R}_{\ge 0}$) & Approximation & UDP frame delta vs.\ flow inter-arrival time \\
 \midrule
 \multicolumn{6}{l}{\textbf{Duplicate \& Collision Audit:} Raw Edge-IIoTset contains 814 ($0.52\%$) exact duplicates; CIC-IoT-2023 sample contains 36 ($0.04\%$) duplicates.} \\
-\multicolumn{6}{l}{Stripping identifiers leaves 532 colliding rows at $K=25$ (Bayes ceiling $=99.1719\%$), reducing to 348 colliding rows (136 errors) at $K=33$ (Bayes ceiling $=99.4254\%$).} \\
+\multicolumn{6}{l}{Stripping identifiers leaves 532 colliding rows at $K=25$ (empirical ceiling $=99.1719\%$), reducing to 348 rows (136 errors) at $K=33$ (ceiling $=99.4254\%$).} \\
+\multicolumn{6}{l}{\footnotesize Repository validation paths: \texttt{data/manifests/feature\_harmonization\_manifest.csv} and \texttt{artifacts/selected\_features.json}.} \\
 \bottomrule
 \end{tabular}}
 \end{table*}
@@ -399,8 +402,21 @@ Statistical significance is established through:
     \item \emph{Holm--Bonferroni Adjustment:} Family-wise error rate control at $\alpha=0.05$ across all paired comparisons.
 \end{enumerate}
 
-\subsection{Reproducibility Protocol}
-All dataset manifests, model weights, prediction arrays, and evaluation scripts are cryptographically hashed (SHA-256) in \texttt{reports/forensic\_evidence\_registry.csv}.
+\subsection{Reproducibility Protocol and Repository Validation Mapping}
+To ensure end-to-end scientific transparency and independent verification, all source code, dataset harmonization manifests, trained model checkpoints, locked test prediction vectors, and validation scripts are publicly hosted at the GitHub repository: \url{https://github.com/RupaliChavanke/Hybrid-Edge-IIOT.git}. Each quantitative claim and empirical metric in this paper maps directly to specific validation files within the repository:
+\begin{itemize}
+    \item \emph{Data Splits and Partitions:} Validated via \nolinkurl{data/processed/edge_iiot_processed.npz} and \nolinkurl{reports/split_audit.csv}.
+    \item \emph{Feature Selection and Schema:} Validated via \nolinkurl{artifacts/selected_features.json} and \nolinkurl{data/manifests/feature_harmonization_manifest.csv}.
+    \item \emph{Locked Baseline Evaluations ($K=25$):} Validated via \nolinkurl{artifacts/metrics/baseline_results.csv} and frozen model weights in \nolinkurl{models/registry/}.
+    \item \emph{Optimized Models and Ensembles ($K=33$):} Validated via \nolinkurl{artifacts/metrics/locked_test_metrics.json} and \nolinkurl{experiments/verified_experiment_matrix_E1_to_E12.json}.
+    \item \emph{Per-Class Metrics and Recall Recovery:} Validated via \nolinkurl{artifacts/per_class_metrics.csv} and \nolinkurl{artifacts/metrics/per_class_baselines.csv}.
+    \item \emph{Paired Statistical Significance Tests:} Validated via \nolinkurl{artifacts/metrics/statistical_comparisons.csv} and \nolinkurl{scripts/run_ablations_and_statistics.py}.
+    \item \emph{Probability Calibration:} Validated via \nolinkurl{artifacts/calibration.json} and \nolinkurl{artifacts/figures/fig4_calibration_metrics.pdf}.
+    \item \emph{Cross-Dataset Transfer:} Validated via \nolinkurl{artifacts/metrics/cross_dataset_results.csv} and \nolinkurl{scripts/cross_dataset_evaluation.py}.
+    \item \emph{Ablation and Perturbation Tests:} Validated via \nolinkurl{artifacts/metrics/ablation_results.csv} and \nolinkurl{experiments/ablation_results.json}.
+    \item \emph{Streaming Latency Benchmarks:} Validated via \nolinkurl{artifacts/metrics/runtime_latency_benchmark.json} and \nolinkurl{scripts/benchmark_runtime.py}.
+\end{itemize}
+All artifact SHA-256 digests and reproduction scripts are cataloged in \nolinkurl{reports/forensic_evidence_registry.csv}.
 
 \section{Results and Quantitative Analysis}
 
@@ -426,14 +442,16 @@ XGBoost Baseline ($K=25$) & 98.93 & 94.19 & 98.97 & 94.19 & 95.51 & 98.82 & 0.08
 LightGBM Baseline ($K=25$) & \textbf{98.96} & \textbf{94.22} & \textbf{99.00} & \textbf{94.22} & \textbf{95.54} & \textbf{98.85} & \textbf{0.07} & \textbf{0.33} & \textbf{0.9997} & 0.187 & \textbf{1.56} \\
 \midrule
 Hybrid Ensemble v2 ($K=25$) & 98.94 & 94.20 & 98.98 & 94.20 & 95.53 & 98.84 & 0.08 & \textbf{0.33} & \textbf{0.9997} & 1.316 & 10.07 \\
+\midrule
+\multicolumn{11}{l}{\footnotesize Repository validation paths: \texttt{artifacts/metrics/baseline\_results.csv} and frozen models in \texttt{models/registry/}.} \\
 \bottomrule
 \end{tabular}}
 \end{table*}
 
 \subsection{Feature-Selection Optimization ($K=25$ vs.\ $K=33$)}
-At $K=25$, Random Forest, CatBoost, XGBoost, and LightGBM all stall near $94.2\%$ balanced accuracy and $95.5\%$ Macro-$F_1$. Evaluating Eq.~(\ref{eq:bayes_collision_ceiling}) reveals that 532 test records collide across classes at $K=25$, creating 196 irreducible Bayes errors: 116 \texttt{MITM} and 25 \texttt{Fingerprinting} instances have all-zero values across the 25 selected TCP/HTTP/MQTT features and collide with 165 Layer-2 \texttt{Port\_Scanning} instances. Because global MI ranking truncated \texttt{arp.hw.size} (Rank 27), \texttt{arp.opcode} (Rank 28), \texttt{udp.time\_delta} (Rank 29), \texttt{udp.port} (Rank 33), and \texttt{dns.qry.qu} (Rank 34), every classifier at $K=25$ misclassifies all 116 \texttt{MITM} instances as \texttt{Port\_Scanning} ($36.26\%$ recall).
+At $K=25$, Random Forest, CatBoost, XGBoost, and LightGBM all stall near $94.2\%$ balanced accuracy and $95.5\%$ Macro-$F_1$. Evaluating Eq.~(\ref{eq:bayes_collision_ceiling}) reveals that 532 test records collide across classes at $K=25$, creating 196 irreducible empirical errors: 116 \texttt{MITM} and 25 \texttt{Fingerprinting} instances have all-zero values across the 25 selected TCP/HTTP/MQTT features and collide with 165 Layer-2 \texttt{Port\_Scanning} instances. Because global MI ranking truncated \texttt{arp.hw.size} (Rank 27), \texttt{arp.opcode} (Rank 28), \texttt{udp.time\_delta} (Rank 29), \texttt{udp.port} (Rank 33), and \texttt{dns.qry.qu} (Rank 34), every classifier at $K=25$ misclassifies all 116 \texttt{MITM} instances as \texttt{Port\_Scanning} ($36.26\%$ recall).
 
-Figure~\ref{fig:feature_sensitivity} plots feature cutoff sensitivity across $K \in \{15, 20, 25, 30, 33, 43\}$. Retaining all $K=33$ correlation-filtered ($\rho \le 0.95$) protocol features eliminates subsampling variance (5-seed Jaccard stability $= 1.000$), raises the empirical Bayes ceiling from $99.1719\%$ to $99.4254\%$, and restores \texttt{MITM} recall from $36.26\%$ to $100.00\%$.
+Figure~\ref{fig:feature_sensitivity} plots feature cutoff sensitivity across $K \in \{15, 20, 25, 30, 33, 43\}$. Retaining all $K=33$ correlation-filtered ($\rho \le 0.95$) protocol features eliminates subsampling variance (5-seed Jaccard stability $= 1.000$), raises the empirical accuracy ceiling from $99.1719\%$ to $99.4254\%$, and restores \texttt{MITM} recall from $36.26\%$ to $100.00\%$.
 
 \begin{figure}[t]
 \centering
@@ -465,6 +483,8 @@ Figure~\ref{fig:feature_sensitivity} plots feature cutoff sensitivity across $K 
  & SLSQP Ensemble + Platt Scaling & 99.18 & 98.19 & 97.44 & 98.19 & 97.70 & 0.02164 & 0.01251 & 0.089 & 0.058 & 0.329 \\
  & SLSQP Ensemble + Isotonic & 99.20 & \textbf{98.21} & 97.45 & \textbf{98.21} & 97.72 & 0.02242 & \textbf{0.01232} & 0.088 & \textbf{0.057} & 0.329 \\
  & SLSQP Ensemble + Temp ($T=0.90$) & \textbf{99.21} & \textbf{98.21} & \textbf{97.47} & \textbf{98.21} & \textbf{97.73} & 0.02151 & 0.01245 & 0.073 & \textbf{0.057} & \textbf{0.329} \\
+\midrule
+\multicolumn{12}{l}{\footnotesize Repository validation paths: \texttt{artifacts/metrics/locked\_test\_metrics.json} and \texttt{experiments/verified\_experiment\_matrix\_E1\_to\_E12.json}.} \\
 \bottomrule
 \end{tabular}}
 \end{table*}
@@ -473,7 +493,7 @@ Figure~\ref{fig:feature_sensitivity} plots feature cutoff sensitivity across $K 
 Table~\ref{tab:proposed_vs_baseline} compares base learners under identical conditions. Within $K=33$, LightGBM achieves the strongest base performance ($99.20\%$ accuracy, $97.72\%$ Macro-$F_1$, $0.02148$ log-loss). XGBoost achieves $97.70\%$ Macro-$F_1$, and CatBoost achieves $97.67\%$ Macro-$F_1$.
 
 \subsection{Ensemble Comparison}
-On validation data, SLSQP converges to $\mathbf{w}^* = [0.0000, 0.4610, 0.5390]^T$, assigning zero weight to CatBoost due to its higher deviance. The calibrated SLSQP ensemble achieves $99.21\%$ accuracy and $97.73\%$ Macro-$F_1$, operating within $0.22\%$ of the empirical Bayes ceiling ($99.4254\%$).
+On validation data, SLSQP converges to $\mathbf{w}^* = [0.0000, 0.4610, 0.5390]^T$, assigning zero weight to CatBoost due to its higher deviance. The calibrated SLSQP ensemble achieves $99.21\%$ accuracy and $97.73\%$ Macro-$F_1$, operating within $0.22\%$ of the empirical accuracy ceiling ($99.4254\%$).
 
 \subsection{Per-Class Analysis}
 Table~\ref{tab:per_class} and Figure~\ref{fig:per_class_f1} detail per-class performance. Seven classes achieve $100.00\%$ $F_1$. Expanding to $K=33$ boosts \texttt{MITM} $F_1$ by $+30.64\text{ pp}$ ($53.23\%\to 83.87\%$) and \texttt{Port\_Scanning} $F_1$ by $+3.27\text{ pp}$ ($95.54\%\to 98.81\%$).
@@ -513,12 +533,14 @@ Table~\ref{tab:per_class} and Figure~\ref{fig:per_class_f1} detail per-class per
 \texttt{XSS} & 1,508 & 96.72 & 99.80 & 98.24 & 0.23 & 96.73 & 100.00 & 98.34 & 0.23 & $+0.10$ \\
 \midrule
 \textbf{Macro-Averaged Total} & \textbf{23,670} & \textbf{98.98} & \textbf{94.20} & \textbf{95.53} & \textbf{0.08} & \textbf{97.47} & \textbf{98.21} & \textbf{97.73} & \textbf{0.06} & \textbf{$+2.20$} \\
+\midrule
+\multicolumn{11}{l}{\footnotesize Repository validation paths: \texttt{artifacts/per\_class\_metrics.csv} and \texttt{artifacts/metrics/per\_class\_baselines.csv}.} \\
 \bottomrule
 \end{tabular}}
 \end{table*}
 
 \subsection{Calibration Analysis}
-Figure~\ref{fig:calibration} compares calibration performance. CatBoost exhibits overconfidence (ECE $=0.700\%$). Blending XGBoost and LightGBM with temperature scaling ($T=0.90$) reduces ECE to $0.073\%$, while isotonic regression achieves the lowest Brier score ($0.01232$).
+Figure~\ref{fig:calibration} compares calibration performance (validated in \texttt{artifacts/calibration.json}). CatBoost exhibits overconfidence (ECE $=0.700\%$). Blending XGBoost and LightGBM with temperature scaling ($T=0.90$) reduces ECE to $0.073\%$, while isotonic regression achieves the lowest Brier score ($0.01232$).
 
 \begin{figure}[t]
 \centering
@@ -553,6 +575,8 @@ Ensemble ($K=33$) & CatBoost ($K=33$) & 6 & 2 & 1.1250 & 0.2888 & $+0.056$ & $[+
 \midrule
 \textbf{Ensemble ($K=33$)} & \textbf{Ensemble ($K=25$)} & \textbf{119} & \textbf{58} & \textbf{20.3390} & \textbf{$6.49\times 10^{-6}$} & \textbf{$+2.194$} & \textbf{$[+1.660, +2.832]$} & \textbf{Significant ($p_{\text{adj}}=5.8\times 10^{-5}$)} \\
 \textbf{LightGBM ($K=33$)} & \textbf{LightGBM ($K=25$)} & \textbf{116} & \textbf{59} & \textbf{17.9200} & \textbf{$2.30\times 10^{-5}$} & \textbf{$+2.177$} & \textbf{$[+1.641, +2.813]$} & \textbf{Significant ($p_{\text{adj}}=1.8\times 10^{-4}$)} \\
+\midrule
+\multicolumn{9}{l}{\footnotesize Repository validation paths: \texttt{artifacts/metrics/statistical\_comparisons.csv} and \texttt{scripts/run\_ablations\_and\_statistics.py}.} \\
 \bottomrule
 \end{tabular}}
 \end{table*}
@@ -602,6 +626,8 @@ Figure~\ref{fig:cross_dataset} and Table~\ref{tab:cross_dataset} summarize cross
 \texttt{E1\_BalPooled\_Joint} & Edge + CIC & Domain- \& class-balanced pooled & Pooled Test ($7,500$) & 75.89 & 65.50 & 62.79 & 76.24 & 78.15 \\
 \texttt{E2\_BalPooled\_on\_Edge} & Edge + CIC & Domain- \& class-balanced pooled & Edge-IIoTset ($3,750$) & 53.01 & \textbf{59.54} & 54.27 & 53.59 & 73.94 \\
 \texttt{E3\_BalPooled\_on\_CIC} & Edge + CIC & Domain- \& class-balanced pooled & CIC-IoT-2023 ($3,750$) & 98.77 & \textbf{71.80} & \textbf{70.32} & 98.80 & 92.52 \\
+\midrule
+\multicolumn{9}{l}{\footnotesize Repository validation paths: \texttt{artifacts/metrics/cross\_dataset\_results.csv} and \texttt{scripts/cross\_dataset\_evaluation.py}.} \\
 \bottomrule
 \end{tabular}}
 \end{table*}
@@ -638,6 +664,8 @@ Baseline Cutoff $K=25$ & 25 & 0.938 & 98.96 & 95.54 & 36.26 \\
 MI Cutoff $K=30$ & 30 & 0.905 & 99.19 & 97.71 & 100.00 \\
 \textbf{Zero-Leakage $K=33$} & \textbf{33} & \textbf{1.000} & \textbf{99.21} & \textbf{97.73} & \textbf{100.00} \\
 Unfiltered Cleaned $K=43$ & 43 & 1.000 & 99.20 & 97.72 & 100.00 \\
+\midrule
+\multicolumn{6}{l}{\footnotesize Repository validation paths: \texttt{artifacts/metrics/ablation\_results.csv} and \texttt{experiments/ablation\_results.json}.} \\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -668,6 +696,8 @@ Gaussian Noise & $\sigma=0.01\sigma_j$ & 72.96 & 67.73 & $-27.80$ & Continuous j
 Gaussian Noise & $\sigma=0.05\sigma_j$ & 51.96 & 49.89 & $-45.64$ & Severe displacement of discrete headers \\
 Feature Dropout & $p=0.05$ & 92.08 & 87.56 & $-7.97$ & Simulates 5\% dropped packet headers \\
 Feature Dropout & $p=0.10$ & 84.52 & 80.00 & $-15.53$ & Zeroing ports routes to fallback leaves \\
+\midrule
+\multicolumn{6}{l}{\footnotesize Repository validation paths: \texttt{artifacts/metrics/ablation\_results.csv} and \texttt{reports/ablations/ablation\_report.md}.} \\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -715,8 +745,10 @@ For resource-constrained edge gateways requiring sub-$100\,\mu\text{s}$ response
  & \quad $\hookrightarrow$ \texttt{PipelineCleaner} + \texttt{Selector} & --- & 9.427 & 10.312 & 11.405 & 9.612 & --- & --- & --- & Pandas overhead \\
  & \quad $\hookrightarrow$ Ensemble + \texttt{AlertEngine} & --- & 2.392 & 2.684 & 3.012 & 2.448 & --- & --- & --- & Calibrated scoring \\
  & Micro-Batched Streaming ($B=10 / 100 / 500$) & --- & 1.271* & 0.150* & \textbf{0.048*} & --- & 786.7/s & 6,657.0/s & \textbf{20,640.0/s} & 0\% drop / 267 MB \\
+\midrule
+\multicolumn{11}{l}{\footnotesize *For micro-batched end-to-end rows, latency columns report amortized per-event pipeline latency at $B=10$ ($1.271\text{ ms}$), $B=100$ ($0.150\text{ ms}$), and $B=500$ ($0.048\text{ ms}$).} \\
+\multicolumn{11}{l}{\footnotesize Repository validation paths: \texttt{artifacts/metrics/runtime\_latency\_benchmark.json} and \texttt{scripts/benchmark\_runtime.py}.} \\
 \bottomrule
-\multicolumn{11}{l}{\footnotesize *For micro-batched end-to-end rows, latency columns report amortized per-event pipeline latency at $B=10$ ($1.271\text{ ms}$), $B=100$ ($0.150\text{ ms}$), and $B=500$ ($0.048\text{ ms}$).}
 \end{tabular}}
 \end{table*}
 
