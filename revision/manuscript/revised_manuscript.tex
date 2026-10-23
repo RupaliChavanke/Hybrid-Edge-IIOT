@@ -124,18 +124,8 @@ The proposed framework operates as an audited, multi-stage detection pipeline de
 
 \begin{figure*}[t]
 \centering
-\fbox{\parbox{0.92\textwidth}{%
-\small
-\textbf{Proposed System Dataflow and Zero-Leakage Processing Pipeline:}\\[4pt]
-\textbf{[Step 1: Telemetry Ingestion]} Multi-Source Packet Capture / Kafka-Redpanda Ingestion $\to$ Raw Field Extraction ($D=63$ in Edge-IIoTset; $D=47$ in CIC-IoT-2023).\\
-\textbf{[Step 2: Strict Partitioning Contract]} Stratified $70/15/15$ Split $\to \mathcal{D}_{\text{train}}$ ($N=110,460$), $\mathcal{D}_{\text{val}}$ ($N=23,670$), locked $\mathcal{D}_{\text{test}}$ ($N=23,670$).\\
-\textbf{[Step 3: Training-Fitted Sanitization]} Purge 6 Host/Session Identifiers ($\texttt{frame.time}, \texttt{ip.src/dst}, \dots$) + 22 Zero-Variance Fields. Compute 5 payload lengths and medians $\boldsymbol{\mu}_{\text{train}}$ on $\mathcal{D}_{\text{train}}$.\\
-\textbf{[Step 4: Protocol Feature Selection]} Correlation threshold $\tau_{\rho}=0.95$ yields $K=33$ protocol features, resolving Layer-2 ARP/DNS collisions.\\
-\textbf{[Step 5: Heterogeneous GBDT Triad]} Fit CatBoost (oblivious), XGBoost (histograms), and LightGBM (GOSS) on $\mathcal{D}_{\text{train}}$ ($K=33$).\\
-\textbf{[Step 6: Simplex Blending \& Calibration]} Solve $\mathbf{w}^* \in \Delta^2$ via SLSQP on $\mathcal{D}_{\text{val}}$ log-loss $\to \mathbf{w}^* = [0.0000, 0.4610, 0.5390]^T$; fit temperature scaling ($T=0.90$) and isotonic calibration.\\
-\textbf{[Step 7: Streaming Engine]} Micro-batch ingestion ($B=500$) $\to$ vectorized schema projection $\to$ calibrated ensemble scoring $\to$ SOC alert dispatch ($20,640\text{ events/s}$).
-}}
-\caption{End-to-end architecture of the leakage-safe, calibrated gradient-boosted intrusion detection and streaming inference pipeline.}
+\includegraphics[width=\textwidth]{artifacts/figures/fig0_system_architecture.jpg}
+\caption{End-to-end architecture of the leakage-safe, calibrated gradient-boosted intrusion detection and streaming inference pipeline across multi-source ingestion, training-fitted sanitization, protocol feature optimization, heterogeneous GBDT ensemble training, validation simplex blending, and micro-batched SOC alerting.}
 \label{fig:arch_flowchart}
 \end{figure*}
 
