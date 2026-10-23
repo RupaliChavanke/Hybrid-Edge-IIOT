@@ -1,0 +1,145 @@
+{
+  "generated_at": "2026-10-22T02:01:11.063549",
+  "quarantine_target": "archive/quarantine_legacy_modules",
+  "total_candidates": 23,
+  "candidates": [
+    {
+      "path": "visualization/attention.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "visualization/plots.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "visualization/architecture.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "visualization/streaming.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "visualization/confusion.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "training/metrics.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "training/checkpoint.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "training/losses.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "training/trainer.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "evaluation/latency.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "evaluation/throughput.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "evaluation/ablation.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "evaluation/roc.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "evaluation/pr.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "evaluation/confusion.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "evaluation/evaluator.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "evaluation/calibration.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "preprocessing/scaler.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "preprocessing/encoder.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "preprocessing/cleaner.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "preprocessing/mrmr_jmi.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "preprocessing/taxonomy.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    },
+    {
+      "path": "preprocessing/loader.py",
+      "reason": "Legacy pre-refactor implementation superseded by modular src/hybrid_ids/ package",
+      "canonical_replacement": "src/hybrid_ids/",
+      "safe_to_quarantine": true
+    }
+  ]
+}

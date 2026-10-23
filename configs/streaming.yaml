@@ -1,0 +1,28 @@
+# Streaming Configuration
+
+redpanda:
+  brokers: "localhost:19092"
+  topic_telemetry: "iiot-network-telemetry"
+  topic_predictions: "iiot-ensemble-predictions"
+  topic_alerts: "iiot-soc-alerts"
+  consumer_group: "hybrid-ids-inference-group"
+  client_id: "hybrid-ids-worker"
+  timeout_ms: 1000
+
+replay:
+  rate_events_per_sec: 50
+  batch_size: 20
+  offline_mode: true # fallback when broker unreachable
+
+alerting:
+  critical_threat_categories:
+    - "DDoS"
+    - "DoS"
+    - "Malware"
+    - "Web_Injection"
+  high_threat_categories:
+    - "Spoofing"
+    - "Web_Attack"
+    - "Brute_Force"
+  medium_threat_categories:
+    - "Reconnaissance"

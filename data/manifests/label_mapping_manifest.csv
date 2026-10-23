@@ -1,0 +1,50 @@
+source_dataset,original_label,canonical_class,canonical_category,confidence,shared_evaluation,rationale
+Edge-IIoTset,Normal,Benign,Benign,high,True,Standard normal operational baseline traffic
+Edge-IIoTset,DDoS_UDP,DDoS_UDP,DDoS,high,True,Volumetric UDP flood targeting exhaustion of socket buffers
+Edge-IIoTset,DDoS_ICMP,DDoS_ICMP,DDoS,high,True,Volumetric ICMP echo request flood causing bandwidth saturation
+Edge-IIoTset,DDoS_TCP,DDoS_TCP,DDoS,high,True,TCP SYN/ACK flood exhausting kernel connection state tables
+Edge-IIoTset,DDoS_HTTP,DDoS_HTTP,DDoS,high,True,Application-layer HTTP GET/POST flood saturating web server threads
+Edge-IIoTset,Port_Scanning,Reconnaissance,Reconnaissance,high,True,Active network port discovery probes (Nmap/masscan)
+Edge-IIoTset,Fingerprinting,Reconnaissance,Reconnaissance,high,True,Active OS / service banner grabbing probes
+Edge-IIoTset,Vulnerability_scanner,Reconnaissance,Reconnaissance,high,True,Automated security scanner probing for known CVEs
+Edge-IIoTset,Password,Brute_Force,Brute_Force,high,True,Credential dictionary and brute-force authentication attacks
+Edge-IIoTset,MITM,Spoofing_MITM,Spoofing,high,True,ARP poisoning and DNS spoofing man-in-the-middle interception
+Edge-IIoTset,SQL_injection,Web_Attack,Web_Attack,high,True,Web application SQL query tampering and injection
+Edge-IIoTset,XSS,Web_Attack,Web_Attack,high,True,Cross-site scripting payload injection into web application
+Edge-IIoTset,Uploading,Web_Attack,Web_Attack,high,True,Unrestricted malicious web shell or binary upload
+Edge-IIoTset,Backdoor,Malware,Malware,high,True,Persistent remote access trojan / reverse shell execution
+Edge-IIoTset,Ransomware,Malware,Malware,high,True,Cryptographic extortion malware encrypting local filesystem
+CICIoT2023,BenignTraffic,Benign,Benign,high,True,Legitimate baseline IoT network traffic
+CICIoT2023,DDoS-UDP_Flood,DDoS_UDP,DDoS,high,True,Distributed UDP packet flood
+CICIoT2023,DDoS-UDP_Fragmentation,DDoS_UDP,DDoS,high,True,Fragmented UDP volumetric flood
+CICIoT2023,DDoS-ICMP_Flood,DDoS_ICMP,DDoS,high,True,Distributed ICMP ping flood
+CICIoT2023,DDoS-ICMP_Fragmentation,DDoS_ICMP,DDoS,high,True,Fragmented ICMP ping flood
+CICIoT2023,DDoS-TCP_Flood,DDoS_TCP,DDoS,high,True,Distributed TCP flood
+CICIoT2023,DDoS-SYN_Flood,DDoS_TCP,DDoS,high,True,Distributed SYN flood exhausting TCP handshakes
+CICIoT2023,DDoS-PSHACK_Flood,DDoS_TCP,DDoS,high,True,TCP PSH-ACK flag volumetric flood
+CICIoT2023,DDoS-RSTFINFlood,DDoS_TCP,DDoS,high,True,TCP RST-FIN anomaly flood
+CICIoT2023,DDoS-SynonymousIP_Flood,DDoS_TCP,DDoS,high,True,Spoofed identical IP TCP flood
+CICIoT2023,DDoS-ACK_Fragmentation,DDoS_TCP,DDoS,high,True,Fragmented TCP ACK flood
+CICIoT2023,DDoS-SlowLoris,DDoS_HTTP,DDoS,high,True,Low-and-slow HTTP header exhaustion attack
+CICIoT2023,DDoS-HTTP_Flood,DDoS_HTTP,DDoS,high,True,Distributed HTTP GET/POST flood
+CICIoT2023,DoS-HTTP_Flood,DDoS_HTTP,DoS,high,True,Single-source HTTP GET/POST flood
+CICIoT2023,DoS-UDP_Flood,DDoS_UDP,DoS,high,True,Single-source UDP packet flood
+CICIoT2023,DoS-TCP_Flood,DDoS_TCP,DoS,high,True,Single-source TCP flood
+CICIoT2023,DoS-SYN_Flood,DDoS_TCP,DoS,high,True,Single-source SYN handshake exhaustion flood
+CICIoT2023,Recon-PortScan,Reconnaissance,Reconnaissance,high,True,Network port scan reconnaissance
+CICIoT2023,Recon-OSScan,Reconnaissance,Reconnaissance,high,True,Operating system fingerprinting scan
+CICIoT2023,Recon-HostDiscovery,Reconnaissance,Reconnaissance,high,True,IP subnet ping sweep and host discovery
+CICIoT2023,Recon-PingSweep,Reconnaissance,Reconnaissance,high,True,ICMP ping sweep for live target identification
+CICIoT2023,VulnerabilityScan,Reconnaissance,Reconnaissance,high,True,Automated security flaw scanning
+CICIoT2023,DictionaryBruteForce,Brute_Force,Brute_Force,high,True,Authentication brute-force / password spraying
+CICIoT2023,MITM-ArpSpoofing,Spoofing_MITM,Spoofing,high,True,Layer 2 ARP poisoning interception
+CICIoT2023,DNS_Spoofing,Spoofing_MITM,Spoofing,high,True,DNS cache poisoning / redirection
+CICIoT2023,SqlInjection,Web_Attack,Web_Attack,high,True,Web SQL injection
+CICIoT2023,CommandInjection,Web_Attack,Web_Attack,high,True,Remote shell command injection
+CICIoT2023,XSS,Web_Attack,Web_Attack,high,True,Cross-site scripting
+CICIoT2023,Uploading_Attack,Web_Attack,Web_Attack,high,True,Web file upload exploit
+CICIoT2023,BrowserHijacking,Web_Attack,Web_Attack,medium,True,Client-side browser manipulation exploit
+CICIoT2023,Backdoor_Malware,Malware,Malware,high,True,Persistent backdoor installation
+CICIoT2023,Mirai-greeth_flood,Malware,Malware,high,True,Mirai botnet GRE Ethernet encapsulation flood
+CICIoT2023,Mirai-greip_flood,Malware,Malware,high,True,Mirai botnet GRE IP encapsulation flood
+CICIoT2023,Mirai-udpplain,Malware,Malware,high,True,Mirai botnet UDP plain traffic flood

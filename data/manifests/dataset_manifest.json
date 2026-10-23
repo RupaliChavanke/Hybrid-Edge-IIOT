@@ -1,0 +1,27 @@
+{
+  "edge_iiot_archive": {
+    "path": "Edge-IIoTset dataset.zip",
+    "size_bytes": 1741481351,
+    "sha256": "4a4a16542756d72390b60c7cde5c46a8439ac5c6e83502e6fc8c64d2d7669d72"
+  },
+  "cic_iot_archive": {
+    "path": "archive.zip",
+    "size_bytes": 500559747,
+    "sha256": "793b212d1dc40973068d06cec4d0676eaf7f17436a859dfa522303e199c7ea5a"
+  },
+  "edge_iiot_raw_csv": {
+    "path": "data/raw/edge_iiot/ML-EdgeIIoT-dataset.csv",
+    "size_bytes": 82184390,
+    "sha256": "53101fad091af20bee815860962a5016b802ee45d456a141042f6183094c3c1a"
+  },
+  "cic_iot_test_csv": {
+    "path": "data/raw/cic_iot_2023/test.csv",
+    "size_bytes": 347958926,
+    "sha256": "15aeb1f47a7bd3e3fc394d18d7b196b3640329abaae65d5220df4def6119bfc6"
+  },
+  "cic_iot_val_csv": {
+    "path": "data/raw/cic_iot_2023/validation.csv",
+    "size_bytes": 347921865,
+    "sha256": "b13775e87ef64c8dd66c910d4585323f99b1209f2508c75a0a0a8d584caf20d8"
+  }
+}

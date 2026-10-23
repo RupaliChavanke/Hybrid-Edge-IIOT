@@ -1,0 +1,28 @@
+source_dataset,source_label,canonical_category,canonical_fine_grained,shared_evaluation,domain_shift_notes
+Edge-IIoTset,Normal,Benign,Benign,True,Operational baseline traffic in IoT testbed
+Edge-IIoTset,DDoS_UDP,DDoS,DDoS_UDP,True,High-volume UDP flood targeted at IoT broker
+Edge-IIoTset,DDoS_ICMP,DDoS,DDoS_ICMP,True,ICMP ping flood exhaustion attack
+Edge-IIoTset,DDoS_HTTP,DDoS,DDoS_HTTP,True,Layer-7 HTTP request flood
+Edge-IIoTset,DDoS_TCP,DDoS,DDoS_TCP,True,TCP SYN / ACK flood attacks
+Edge-IIoTset,Port_Scanning,Reconnaissance,Reconnaissance,True,Nmap network topology discovery
+Edge-IIoTset,Fingerprinting,Reconnaissance,Reconnaissance,True,OS and service discovery probing
+Edge-IIoTset,Vulnerability_scanner,Reconnaissance,Reconnaissance,True,Nessus / Nikto automated scanner
+Edge-IIoTset,Password,Brute_Force,Brute_Force,True,Hydra dictionary password attacks
+Edge-IIoTset,MITM,Spoofing,Spoofing_MITM,True,ARP poisoning man-in-the-middle
+Edge-IIoTset,SQL_injection,Web_Attack,Web_Attack,True,SQL payload injections via web forms
+Edge-IIoTset,XSS,Web_Attack,Web_Attack,True,Cross-site scripting injections
+Edge-IIoTset,Uploading,Web_Attack,Web_Attack,True,Malicious file upload to web server
+Edge-IIoTset,Backdoor,Malware,Malware,True,Persistent backdoor agent execution
+Edge-IIoTset,Ransomware,Malware,Malware,True,WannaCry / IoT ransomware execution
+CICIoT2023,BenignTraffic,Benign,Benign,True,Legitimate smart home device network traffic
+CICIoT2023,DDoS-UDP_Flood,DDoS,DDoS_UDP,True,Direct equivalent to Edge-IIoTset DDoS_UDP
+CICIoT2023,DDoS-ICMP_Flood,DDoS,DDoS_ICMP,True,Direct equivalent to Edge-IIoTset DDoS_ICMP
+CICIoT2023,DDoS-HTTP_Flood,DDoS,DDoS_HTTP,True,Direct equivalent to Edge-IIoTset DDoS_HTTP
+CICIoT2023,DDoS-TCP_Flood,DDoS,DDoS_TCP,True,Direct equivalent to Edge-IIoTset DDoS_TCP
+CICIoT2023,Recon-PortScan,Reconnaissance,Reconnaissance,True,Port scanning activity equivalent
+CICIoT2023,Recon-OSScan,Reconnaissance,Reconnaissance,True,OS fingerprinting scan equivalent
+CICIoT2023,DictionaryBruteForce,Brute_Force,Brute_Force,True,Password brute forcing equivalent
+CICIoT2023,MITM-ArpSpoofing,Spoofing,Spoofing_MITM,True,ARP spoofing MITM equivalent
+CICIoT2023,SqlInjection,Web_Attack,Web_Attack,True,SQL injection web attack equivalent
+CICIoT2023,BrowserHijacking,Web_Attack,Web_Attack,True,Client-side web attack equivalent
+CICIoT2023,Mirai-greeth_flood,Malware,Malware,True,Mirai IoT botnet malware campaign

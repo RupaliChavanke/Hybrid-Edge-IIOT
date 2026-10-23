@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hybrid-ids"
+version = "2.0.0"
+description = "Hybrid Edge-IIoTset + CICIoT2023 Intrusion Detection Framework with CatBoost, XGBoost, LightGBM, and Validation-Based Ensembling"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Hybrid IDS Research Team" }
+]
+dependencies = [
+    "catboost>=1.2.0",
+    "xgboost>=2.0.0",
+    "lightgbm>=4.0.0",
+    "scikit-learn>=1.3.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "scipy>=1.11.0",
+    "pyyaml>=6.0.0",
+    "pydantic>=2.0.0",
+    "streamlit>=1.30.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "plotly>=5.18.0",
+    "psutil>=5.9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+]
+streaming = [
+    "confluent-kafka>=2.3.0",
+    "kafka-python-ng>=2.2.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"

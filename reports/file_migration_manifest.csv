@@ -1,0 +1,31 @@
+source_path,target_path,action,category,justification
+models/proposed_model.py,archive/legacy_dl_architecture/proposed_model.py,archived,model,Obsolete CNN-Ghost-BiGRU-Attention architecture being replaced by tree-based ensemble
+models/cnn.py,archive/legacy_dl_architecture/cnn.py,archived,model,Depthwise separable CNN module obsolete for gradient boosting
+models/ghost_module.py,archive/legacy_dl_architecture/ghost_module.py,archived,model,Ghost convolution obsolete for tree models
+models/se_attention.py,archive/legacy_dl_architecture/se_attention.py,archived,model,Squeeze-and-Excitation attention obsolete for tree models
+models/bigru.py,archive/legacy_dl_architecture/bigru.py,archived,model,Bi-GRU recurrent module obsolete for tree models
+models/temporal_attention.py,archive/legacy_dl_architecture/temporal_attention.py,archived,model,Temporal attention mechanism obsolete for tree models
+models/low_rank.py,archive/legacy_dl_architecture/low_rank.py,archived,model,Pointwise low-rank linear projection obsolete for tree models
+models/baselines.py,archive/legacy_dl_architecture/baselines.py,archived,model,Replaced by src/hybrid_ids/models/catboost_model.py xgboost_model.py lightgbm_model.py
+training/trainer.py,archive/legacy_dl_architecture/trainer.py,archived,training,PyTorch Center-Focal training loop replaced by train_base_models.py
+training/losses.py,archive/legacy_dl_architecture/losses.py,archived,training,CenterLoss and FocalLoss replaced by gradient boosting objectives
+training/checkpoint.py,archive/legacy_dl_architecture/checkpoint.py,archived,training,Replaced by model serialization in src/hybrid_ids/inference/model_registry.py
+train.py,train.py,modified,scripts,Updated entry point to trigger hybrid tree-based training and ensembling
+app.py,app.py,modified,dashboard,Updated Streamlit entry point to display gradient-boosted ensemble results and cross-dataset evaluations
+config.yaml,configs/models.yaml,modified,configuration,Replaced single deep learning config with modular YAML configs in configs/
+requirements.txt,requirements.txt,modified,dependencies,Added catboost xgboost lightgbm and pinned versions
+preprocessing/cleaner.py,src/hybrid_ids/preprocessing/cleaning.py,retained,preprocessing,Preserved and adapted flow length extraction and IP dropping logic
+preprocessing/encoder.py,src/hybrid_ids/preprocessing/encoding.py,retained,preprocessing,Preserved and adapted categorical encoding utilities
+preprocessing/taxonomy.py,src/hybrid_ids/data/label_mapping.py,retained,data,Extended to support unified ontology for Edge-IIoTset and CICIoT2023
+preprocessing/loader.py,src/hybrid_ids/data/loaders.py,retained,data,Extended to support chunked ingestion of both Edge-IIoTset and CICIoT2023
+preprocessing/mrmr_jmi.py,src/hybrid_ids/preprocessing/feature_selection.py,retained,preprocessing,Preserved mutual information and mRMR feature selection logic
+evaluation/metrics.py,src/hybrid_ids/evaluation/metrics.py,retained,evaluation,Comprehensive multiclass classification metric suite
+evaluation/evaluator.py,src/hybrid_ids/evaluation/statistical_tests.py,retained,evaluation,Preserved evaluation and bootstrap confidence intervals
+streaming/bus.py,src/hybrid_ids/streaming/bus.py,retained,streaming,Event bus abstraction for Redpanda and offline queues
+streaming/schemas.py,src/hybrid_ids/streaming/schemas.py,retained,streaming,Pydantic telemetry schemas updated with canonical features
+streaming/inference_service.py,src/hybrid_ids/streaming/inference_service.py,modified,streaming,Updated inference worker to use CatBoost/XGBoost/LightGBM ensemble
+reproducibility/*,reproducibility/*,retained,audit,Preserved original audit evidence and validation reports
+reports/*,reports/*,retained,reports,Preserved prior experimental reports for historical comparative analysis
+data/raw/ML-EdgeIIoT-dataset.csv,data/raw/edge_iiot/ML-EdgeIIoT-dataset.csv,retained,dataset,Immutable raw Edge-IIoTset machine learning partition
+Edge-IIoTset dataset.zip,Edge-IIoTset dataset.zip,retained,dataset,Original full dataset archive protected
+archive.zip,archive.zip,retained,dataset,Original CICIoT2023 dataset archive protected

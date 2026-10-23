@@ -1,0 +1,7 @@
+experiment_id,train_dataset,test_dataset,description,sample_count,accuracy,balanced_accuracy,macro_precision,macro_recall,macro_f1,weighted_f1
+Exp_A_Edge_InDomain,Edge-IIoTset,Edge-IIoTset,Within-domain baseline on Edge-IIoTset test partition,12000,0.47491666666666665,0.49816433566433566,0.12332294642084307,0.24908216783216783,0.16496844786661263,0.3145398405990081
+Exp_B_CIC_InDomain,CICIoT2023,CICIoT2023,Within-domain baseline on CICIoT2023 test partition,944,0.9544491525423728,0.7540760620240389,0.8235655378136515,0.7540760620240389,0.7657155422231103,0.9522093792429993
+Exp_C_Pooled_Harmonized,Edge-IIoTset + CICIoT2023,Edge-IIoTset + CICIoT2023,Harmonized multi-source pooled model,12944,0.5100432632880099,0.7386864357546331,0.7385829294187928,0.7386864357546331,0.6128129988912523,0.35043797103301133
+Exp_D_Edge_to_CIC,Edge-IIoTset,CICIoT2023,Cross-domain zero-shot evaluation on foreign test environment,944,0.059322033898305086,0.10710845031654279,0.0352125723738627,0.10710845031654279,0.02772884264834003,0.023255593630172055
+Exp_E_CIC_to_Edge,CICIoT2023,Edge-IIoTset,Cross-domain zero-shot evaluation on foreign test environment,12000,0.0,0.0,0.0,0.0,0.0,0.0
+Exp_F_Domain_Shift_Analysis,Cross-Domain Comparison,Performance Drop,"Domain shift transfer penalty: Edge->CIC drop=13.72%, CIC->Edge drop=76.57%",0,0.0,0.0,0.0,0.0,0.013864421324170016,0.0

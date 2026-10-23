@@ -1,0 +1,3 @@
+dataset,total_records,exact_duplicate_records,duplicate_rate_pct,handling_strategy,scientific_rationale
+Edge-IIoTset,157800,814,0.52%,Preserve in distinct temporal partitions,High-frequency packet floods naturally emit identical TCP ACK/RST packets; deduplication would artificially distort attack density.
+CICIoT2023,100000,36,0.04%,Preserve in distinct flow partitions,Flow statistical summaries repeat across uniform probing bursts; dropping records destroys flow volume signatures.

@@ -1,0 +1,23 @@
+# Ensemble Configuration
+
+strategy: "validation_weighted" # Options: uniform_average, validation_weighted, stacking
+
+stacking:
+  meta_classifier: "logistic_regression" # logistic_regression or ridge
+  cv_folds: 5
+  regularization_C: 1.0
+
+weight_optimization:
+  metric: "log_loss" # log_loss on validation simplex
+  optimization_method: "SLSQP"
+  max_iterations: 200
+
+calibration:
+  enabled: true
+  method: "temperature" # temperature, isotonic, or sigmoid (Platt)
+  cv: "prefit" # calibrated strictly on validation set
+
+alerting:
+  confidence_threshold_low: 0.50
+  confidence_threshold_medium: 0.70
+  confidence_threshold_high: 0.85

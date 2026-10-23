@@ -1,0 +1,45 @@
+# Base Gradient-Boosted Classifiers Configuration
+
+catboost:
+  iterations: 300
+  learning_rate: 0.08
+  depth: 6
+  l2_leaf_reg: 3.0
+  loss_function: "MultiClass"
+  eval_metric: "MultiClass"
+  early_stopping_rounds: 25
+  random_seed: 42
+  verbose: 50
+  thread_count: -1
+  task_type: "CPU"
+
+xgboost:
+  n_estimators: 300
+  learning_rate: 0.08
+  max_depth: 6
+  subsample: 0.85
+  colsample_bytree: 0.85
+  reg_alpha: 0.1
+  reg_lambda: 1.0
+  objective: "multi:softprob"
+  eval_metric: "mlogloss"
+  early_stopping_rounds: 25
+  random_state: 42
+  n_jobs: -1
+  tree_method: "hist"
+
+lightgbm:
+  n_estimators: 300
+  learning_rate: 0.08
+  num_leaves: 31
+  max_depth: 6
+  subsample: 0.85
+  colsample_bytree: 0.85
+  reg_alpha: 0.1
+  reg_lambda: 1.0
+  objective: "multiclass"
+  metric: "multi_logloss"
+  early_stopping_round: 25
+  random_state: 42
+  n_jobs: -1
+  verbose: -1

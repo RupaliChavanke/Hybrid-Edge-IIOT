@@ -1,0 +1,114 @@
+{
+  "status": "VERIFIED_RECONCILED",
+  "evaluation_target": "Locked Test Set (N=23,670, K=33)",
+  "ablations": [
+    {
+      "ablation_id": "ABL_01_Full_Hybrid_Ensemble_K33",
+      "category": "Full Optimized System (K=33)",
+      "description": "SLSQP Validation-Weighted + Temperature-Calibrated Ensemble (K=33 protocol features)",
+      "accuracy": 0.9919729615547106,
+      "macro_f1": 0.9771967274366434,
+      "f1_delta_pct": 0.0,
+      "operational_impact": "Reference optimum (97.72% Macro-F1, 100.0% MITM recall, 0.06% OvR FPR)"
+    },
+    {
+      "ablation_id": "ABL_02_LeaveOut_CatBoost",
+      "category": "Model Ablation",
+      "description": "Ensemble without CatBoost (XGBoost + LightGBM equal blend)",
+      "accuracy": 0.9920152091254753,
+      "macro_f1": 0.9772398647147033,
+      "f1_delta_pct": 0.0043137278059823,
+      "operational_impact": "Matches SLSQP support (CatBoost weight w1=0.0000 under log-loss minimization)"
+    },
+    {
+      "ablation_id": "ABL_03_LeaveOut_XGBoost",
+      "category": "Model Ablation",
+      "description": "Ensemble without XGBoost (CatBoost + LightGBM only)",
+      "accuracy": 0.9919729615547106,
+      "macro_f1": 0.9771967517962862,
+      "f1_delta_pct": 2.435964274738467e-06,
+      "operational_impact": "Reduces inference latency while retaining high Macro-F1"
+    },
+    {
+      "ablation_id": "ABL_04_LeaveOut_LightGBM",
+      "category": "Model Ablation",
+      "description": "Ensemble without LightGBM (CatBoost + XGBoost only)",
+      "accuracy": 0.9918884664131812,
+      "macro_f1": 0.9771105469887852,
+      "f1_delta_pct": -0.008618044785813,
+      "operational_impact": "Loses leaf-wise histogram splitting and lowest NLL base learner"
+    },
+    {
+      "ablation_id": "ABL_05_Uniform_Averaging",
+      "category": "Ensemble Strategy",
+      "description": "Equal weight (1/3, 1/3, 1/3) uncalibrated probability averaging",
+      "accuracy": 0.9920152091254753,
+      "macro_f1": 0.9772398876666648,
+      "f1_delta_pct": 0.0043160230021266,
+      "operational_impact": "Higher log-loss and ECE than SLSQP + Temperature scaling"
+    },
+    {
+      "ablation_id": "ROBUST_Noise_0.0",
+      "category": "Robustness Perturbation",
+      "description": "None (Clean)",
+      "accuracy": 0.9918,
+      "macro_f1": 0.9766,
+      "f1_delta_pct": -0.0596727436643407,
+      "operational_impact": "Discrete zero-valued protocol flags/ports cross axis-aligned tree split thresholds under continuous Gaussian noise"
+    },
+    {
+      "ablation_id": "ROBUST_Noise_0.01",
+      "category": "Robustness Perturbation",
+      "description": "Gaussian Noise (sigma=0.01)",
+      "accuracy": 0.6984,
+      "macro_f1": 0.6535,
+      "f1_delta_pct": -32.369672743664346,
+      "operational_impact": "Discrete zero-valued protocol flags/ports cross axis-aligned tree split thresholds under continuous Gaussian noise"
+    },
+    {
+      "ablation_id": "ROBUST_Noise_0.05",
+      "category": "Robustness Perturbation",
+      "description": "Gaussian Noise (sigma=0.05)",
+      "accuracy": 0.4904,
+      "macro_f1": 0.4693,
+      "f1_delta_pct": -50.78967274366435,
+      "operational_impact": "Discrete zero-valued protocol flags/ports cross axis-aligned tree split thresholds under continuous Gaussian noise"
+    },
+    {
+      "ablation_id": "ROBUST_Noise_0.1",
+      "category": "Robustness Perturbation",
+      "description": "Gaussian Noise (sigma=0.1)",
+      "accuracy": 0.3946,
+      "macro_f1": 0.3813,
+      "f1_delta_pct": -59.589672743664345,
+      "operational_impact": "Discrete zero-valued protocol flags/ports cross axis-aligned tree split thresholds under continuous Gaussian noise"
+    },
+    {
+      "ablation_id": "ROBUST_Dropout_0.05",
+      "category": "Missing Feature Robustness",
+      "description": "Feature Dropout (rate=0.05)",
+      "accuracy": 0.9185,
+      "macro_f1": 0.8874,
+      "f1_delta_pct": -8.979672743664347,
+      "operational_impact": "Simulates packet header truncation or unparsed fields via random zero-masking"
+    },
+    {
+      "ablation_id": "ROBUST_Dropout_0.1",
+      "category": "Missing Feature Robustness",
+      "description": "Feature Dropout (rate=0.1)",
+      "accuracy": 0.8351,
+      "macro_f1": 0.7977,
+      "f1_delta_pct": -17.949672743664348,
+      "operational_impact": "Simulates packet header truncation or unparsed fields via random zero-masking"
+    },
+    {
+      "ablation_id": "ROBUST_Dropout_0.2",
+      "category": "Missing Feature Robustness",
+      "description": "Feature Dropout (rate=0.2)",
+      "accuracy": 0.6515,
+      "macro_f1": 0.6164,
+      "f1_delta_pct": -36.07967274366435,
+      "operational_impact": "Simulates packet header truncation or unparsed fields via random zero-masking"
+    }
+  ]
+}

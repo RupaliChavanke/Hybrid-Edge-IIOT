@@ -1,0 +1,43 @@
+# Data Configuration for Hybrid Edge-IIoTset + CICIoT2023 IDS
+
+edge_iiot:
+  raw_path: "data/raw/edge_iiot/ML-EdgeIIoT-dataset.csv"
+  format: "csv"
+  target_column: "Attack_type"
+  binary_column: "Attack_label"
+  timestamp_column: "frame.time"
+  metadata_drop:
+    - "frame.time"
+    - "icmp.transmit_timestamp"
+    - "ip.src_host"
+    - "ip.dst_host"
+    - "arp.src.proto_ipv4"
+    - "arp.dst.proto_ipv4"
+    - "http.file_data"
+    - "http.request.full_uri"
+    - "http.referer"
+    - "http.request.uri.query"
+    - "tcp.payload"
+    - "tcp.options"
+    - "mqtt.msg"
+    - "dns.qry.name"
+    - "dns.qry.name.len"
+
+cic_iot_2023:
+  raw_test_path: "data/raw/cic_iot_2023/test.csv"
+  raw_val_path: "data/raw/cic_iot_2023/validation.csv"
+  archive_path: "archive.zip"
+  format: "csv"
+  target_column: "label"
+
+splits:
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  random_seed: 42
+  stratify: true
+
+sampling:
+  smoke_sample_size: 2000
+  dev_sample_size: 25000
+  full_benchmark_sample_size: null # null means entire dataset

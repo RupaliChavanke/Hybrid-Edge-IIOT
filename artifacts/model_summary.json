@@ -1,0 +1,12 @@
+{
+  "framework": "Hybrid GBDT Intrusion Detection Framework",
+  "primary_architecture": "CatBoost + XGBoost + LightGBM with SLSQP Simplex Ensembling & Temperature Calibration",
+  "version": "2.1.0",
+  "features_count": 33,
+  "classes_count": 15,
+  "ensemble_macro_f1": 0.9772,
+  "ensemble_accuracy": 0.992,
+  "ensemble_balanced_accuracy": 0.982,
+  "validation_strategy": "Constrained SLSQP Simplex Cross-Entropy Minimization",
+  "calibration": "Post-Hoc Temperature Scaling (T=0.90)"
+}

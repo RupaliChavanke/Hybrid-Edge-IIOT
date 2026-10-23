@@ -1,0 +1,13 @@
+ablation_id,category,description,accuracy,macro_f1,f1_delta_pct,operational_impact
+ABL_01_Full_Hybrid_Ensemble_K33,Full Optimized System (K=33),SLSQP Validation-Weighted + Temperature-Calibrated Ensemble (K=33 protocol features),0.9919729615547106,0.9771967274366434,0.0,"Reference optimum (97.72% Macro-F1, 100.0% MITM recall, 0.06% OvR FPR)"
+ABL_02_LeaveOut_CatBoost,Model Ablation,Ensemble without CatBoost (XGBoost + LightGBM equal blend),0.9920152091254753,0.9772398647147033,0.004313727805982381,Matches SLSQP support (CatBoost weight w1=0.0000 under log-loss minimization)
+ABL_03_LeaveOut_XGBoost,Model Ablation,Ensemble without XGBoost (CatBoost + LightGBM only),0.9919729615547106,0.9771967517962862,2.435964274738467e-06,Reduces inference latency while retaining high Macro-F1
+ABL_04_LeaveOut_LightGBM,Model Ablation,Ensemble without LightGBM (CatBoost + XGBoost only),0.9918884664131813,0.9771105469887853,-0.008618044785813073,Loses leaf-wise histogram splitting and lowest NLL base learner
+ABL_05_Uniform_Averaging,Ensemble Strategy,"Equal weight (1/3, 1/3, 1/3) uncalibrated probability averaging",0.9920152091254753,0.9772398876666647,0.004316023002126634,Higher log-loss and ECE than SLSQP + Temperature scaling
+ROBUST_Noise_0.0,Robustness Perturbation,None (Clean),0.9918,0.9766,-0.05967274366434072,Discrete zero-valued protocol flags/ports cross axis-aligned tree split thresholds under continuous Gaussian noise
+ROBUST_Noise_0.01,Robustness Perturbation,Gaussian Noise (sigma=0.01),0.6984,0.6535,-32.369672743664346,Discrete zero-valued protocol flags/ports cross axis-aligned tree split thresholds under continuous Gaussian noise
+ROBUST_Noise_0.05,Robustness Perturbation,Gaussian Noise (sigma=0.05),0.4904,0.4693,-50.78967274366435,Discrete zero-valued protocol flags/ports cross axis-aligned tree split thresholds under continuous Gaussian noise
+ROBUST_Noise_0.1,Robustness Perturbation,Gaussian Noise (sigma=0.1),0.3946,0.3813,-59.589672743664345,Discrete zero-valued protocol flags/ports cross axis-aligned tree split thresholds under continuous Gaussian noise
+ROBUST_Dropout_0.05,Missing Feature Robustness,Feature Dropout (rate=0.05),0.9185,0.8874,-8.979672743664347,Simulates packet header truncation or unparsed fields via random zero-masking
+ROBUST_Dropout_0.1,Missing Feature Robustness,Feature Dropout (rate=0.1),0.8351,0.7977,-17.949672743664348,Simulates packet header truncation or unparsed fields via random zero-masking
+ROBUST_Dropout_0.2,Missing Feature Robustness,Feature Dropout (rate=0.2),0.6515,0.6164,-36.07967274366435,Simulates packet header truncation or unparsed fields via random zero-masking

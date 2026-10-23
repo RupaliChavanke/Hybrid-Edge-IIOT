@@ -1,0 +1,30 @@
+original_path,canonical_path,action,category,rationale
+train.py,scripts/train_models.py,COMPATIBILITY_WRAPPER,entry_point,Retains backward compatibility for CLI training invocation
+app.py,app/dashboard.py,COMPATIBILITY_WRAPPER,entry_point,Routes Streamlit app launch directly to new modular dashboard
+preprocessing/cleaner.py,src/hybrid_ids/preprocessing/cleaning.py,MIGRATED,source_code,Modularized pipeline cleaner with flow-length feature extraction
+preprocessing/encoder.py,src/hybrid_ids/preprocessing/encoding.py,MIGRATED,source_code,Refactored into robust target and label encoders
+preprocessing/loader.py,src/hybrid_ids/data/loaders.py,MIGRATED,source_code,Chunked loading with automatic downcasting
+preprocessing/mrmr_jmi.py,src/hybrid_ids/preprocessing/feature_selection.py,MIGRATED,source_code,Mutual information and correlation feature selector
+preprocessing/scaler.py,src/hybrid_ids/preprocessing/cleaning.py,MIGRATED,source_code,Consolidated into pipeline data cleaning routines
+preprocessing/taxonomy.py,src/hybrid_ids/data/label_mapping.py,MIGRATED,source_code,Unified canonical multi-class attack taxonomy
+models/baselines.py,scripts/train_baselines.py,MIGRATED,experiments,Canonical runner for fair baseline comparisons
+models/bigru.py,archive/legacy_models/bigru.py,ARCHIVED,legacy_code,Legacy deep learning model superseded by high-throughput GBDT triad
+models/cnn.py,archive/legacy_models/cnn.py,ARCHIVED,legacy_code,Legacy 1D CNN superseded by GBDT triad
+models/ghost_module.py,archive/legacy_models/ghost_module.py,ARCHIVED,legacy_code,Legacy neural ghost module archived
+models/low_rank.py,archive/legacy_models/low_rank.py,ARCHIVED,legacy_code,Legacy low-rank tensor model archived
+models/se_attention.py,archive/legacy_models/se_attention.py,ARCHIVED,legacy_code,Legacy squeeze-excitation attention archived
+models/temporal_attention.py,archive/legacy_models/temporal_attention.py,ARCHIVED,legacy_code,Legacy temporal attention module archived
+models/proposed_model.py,src/hybrid_ids/models/ensemble.py,MIGRATED,source_code,Replaced with validation-weighted GBDT ensemble
+training/trainer.py,src/hybrid_ids/training/train_base_models.py,MIGRATED,source_code,Standardized GBDT training loop with early stopping
+evaluation/evaluator.py,src/hybrid_ids/evaluation/metrics.py,MIGRATED,source_code,Defensible multi-class metrics (Acc, BalAcc, Macro-F1, FPR, FNR, AUC)
+evaluation/ablation.py,src/hybrid_ids/evaluation/robustness.py,MIGRATED,source_code,Gaussian noise and feature dropout ablation suite
+evaluation/calibration.py,src/hybrid_ids/models/calibration.py,MIGRATED,source_code,Platt sigmoid probability calibration
+streaming/bus.py,src/hybrid_ids/streaming/feature_adapter.py,MIGRATED,source_code,Stream feature adapter and schema sanitizer
+streaming/redpanda_consumer.py,src/hybrid_ids/streaming/redpanda_consumer.py,MIGRATED,source_code,Safe fault-tolerant consumer
+data/raw/edge_iiot/ML-EdgeIIoT-dataset.csv,data/raw/edge_iiot/ML-EdgeIIoT-dataset.csv,PROTECTED_RETAINED,dataset,Raw research dataset protected and immutable
+data/raw/cic_iot_2023/test.csv,data/raw/cic_iot_2023/test.csv,PROTECTED_RETAINED,dataset,Raw research dataset protected and immutable
+data/raw/cic_iot_2023/validation.csv,data/raw/cic_iot_2023/validation.csv,PROTECTED_RETAINED,dataset,Raw research dataset protected and immutable
+models/registry/catboost_model_v2.pkl,models/registry/catboost_model_v2.pkl,PROTECTED_RETAINED,model_artifact,Trained CatBoost artifact with SHA-256 validation
+models/registry/xgboost_model_v2.pkl,models/registry/xgboost_model_v2.pkl,PROTECTED_RETAINED,model_artifact,Trained XGBoost artifact with SHA-256 validation
+models/registry/lightgbm_model_v2.pkl,models/registry/lightgbm_model_v2.pkl,PROTECTED_RETAINED,model_artifact,Trained LightGBM artifact with SHA-256 validation
+models/registry/hybrid_ensemble_v2.pkl,models/registry/hybrid_ensemble_v2.pkl,PROTECTED_RETAINED,model_artifact,Trained Hybrid Ensemble artifact with SHA-256 validation

@@ -1,0 +1,8 @@
+canonical_feature,edge_iiot_column,cic_iot_column,definition,unit,compatibility_decision,transformation,known_limitations
+flow_duration,frame.time_delta,flow_duration,Duration of network flow or inter-frame delta,seconds / microseconds,Compatible with unit scaling,Standardize to milliseconds,Edge-IIoT measures delta while CIC aggregates duration
+header_length,tcp.hdr_len,Header_Length,Total TCP/IP header byte length,bytes,Compatible,Direct numeric cast,CIC aggregates total headers; Edge captures per-frame headers
+packet_rate,rate,Rate,Transmission rate of packets or frames,packets/sec,Compatible,Standardize rate ratio,Sampling window differences between capture topologies
+total_bytes,tcp.len,Tot_size,Total bytes transferred in flow payload,bytes,Compatible,Direct numeric cast,Edge contains per-packet payload length; CIC contains flow total
+protocol_type,ip.proto,Protocol_Type,IP layer transport protocol identifier,categorical / int,Compatible,"Integer protocol mapping (6=TCP, 17=UDP, 1=ICMP)",Consistent standardized IANA protocol codes
+tcp_flags,tcp.flags,FIN_Flag_Cnt / SYN_Flag_Cnt,TCP control flags,bitmask vs count,Partially Compatible,"Flag extraction (SYN, ACK, FIN)",Edge provides raw 16-bit hex flags; CIC provides individual counts
+payload_mean,http.content_length,AVG,Mean packet / content byte size,bytes,Compatible with median imputation,Robust numeric scaling,Missing in non-HTTP traffic for Edge-IIoTset

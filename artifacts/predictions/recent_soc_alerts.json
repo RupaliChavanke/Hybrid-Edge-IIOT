@@ -1,0 +1,422 @@
+[
+  {
+    "alert_id": "d8d4ab8d-6a70-46fa-861f-957bf43c5404",
+    "event_id": "f24d44d2-41c2-4016-bc34-6f65c1c21c27",
+    "timestamp": 1792615599.848083,
+    "threat_category": "DDoS",
+    "attack_type": "DDoS_UDP",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Deploy rate-limiting at edge ingress switch; activate upstream BGP Flowspec blackholing."
+  },
+  {
+    "alert_id": "03bba73c-a920-49ab-8d2f-9515d52ab3ed",
+    "event_id": "0b37a396-3c43-473c-8a7e-e31fd3c09a68",
+    "timestamp": 1792615599.8751512,
+    "threat_category": "DDoS",
+    "attack_type": "DDoS_TCP",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Deploy rate-limiting at edge ingress switch; activate upstream BGP Flowspec blackholing."
+  },
+  {
+    "alert_id": "12ef9d26-ac5f-4e0a-b508-81f7aaecf71a",
+    "event_id": "e1a46469-2f15-4220-bb94-ca41fad9c61c",
+    "timestamp": 1792615599.8882718,
+    "threat_category": "DDoS",
+    "attack_type": "DDoS_TCP",
+    "confidence": 0.9997,
+    "severity": "CRITICAL",
+    "recommended_action": "Deploy rate-limiting at edge ingress switch; activate upstream BGP Flowspec blackholing."
+  },
+  {
+    "alert_id": "b6b195d3-7284-4f4a-a574-e43d4663cfa4",
+    "event_id": "dae8ea03-098f-4a52-bc3f-1281399b5e7b",
+    "timestamp": 1792615599.902019,
+    "threat_category": "DDoS",
+    "attack_type": "DDoS_UDP",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Deploy rate-limiting at edge ingress switch; activate upstream BGP Flowspec blackholing."
+  },
+  {
+    "alert_id": "d1bc014a-c796-40da-b910-d061255b1e5d",
+    "event_id": "3ac3d035-e781-4161-8ba3-05d3c962cedb",
+    "timestamp": 1792615599.9152708,
+    "threat_category": "DDoS",
+    "attack_type": "DDoS_UDP",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Deploy rate-limiting at edge ingress switch; activate upstream BGP Flowspec blackholing."
+  },
+  {
+    "alert_id": "80de5af7-5a02-4edb-bcbb-89c317902b02",
+    "event_id": "7d8eac48-0fce-4d75-9f85-f1fb6a4a1941",
+    "timestamp": 1792615599.9280698,
+    "threat_category": "Brute_Force",
+    "attack_type": "Password",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Temporarily lock targeted account; enforce multi-factor authentication (MFA)."
+  },
+  {
+    "alert_id": "be000127-7407-4e3b-9911-16666e655ade",
+    "event_id": "cfa18911-5e69-41d7-8037-487c76b4fafa",
+    "timestamp": 1792615599.940788,
+    "threat_category": "DDoS",
+    "attack_type": "DDoS_ICMP",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Deploy rate-limiting at edge ingress switch; activate upstream BGP Flowspec blackholing."
+  },
+  {
+    "alert_id": "8b26307d-3415-44eb-a9d9-8ccfe51527e5",
+    "event_id": "54963095-9280-4926-aa5e-cd2c7f308d52",
+    "timestamp": 1792615599.95326,
+    "threat_category": "Web_Attack",
+    "attack_type": "SQL_injection",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Block originating source IP on WAF; inspect application server payload logs."
+  },
+  {
+    "alert_id": "d62bbde8-26b1-485d-a524-2976142cfccc",
+    "event_id": "156b4379-bffe-4b21-96bd-eef899b5ab9d",
+    "timestamp": 1792615599.966261,
+    "threat_category": "Reconnaissance",
+    "attack_type": "Vulnerability_scanner",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Log probe signatures; monitor source IP for subsequent lateral movement attempts."
+  },
+  {
+    "alert_id": "31624c7b-cc7c-4298-a5fa-8e29fef44870",
+    "event_id": "9a957651-f42f-4231-bc52-ecc304728b56",
+    "timestamp": 1792615599.992919,
+    "threat_category": "Reconnaissance",
+    "attack_type": "Port_Scanning",
+    "confidence": 0.5562,
+    "severity": "MEDIUM",
+    "recommended_action": "Log probe signatures; monitor source IP for subsequent lateral movement attempts."
+  },
+  {
+    "alert_id": "f26df6a0-d769-4cc8-9f1a-bf9394e1c20f",
+    "event_id": "993466c7-746d-43d7-9caa-ce7c63227deb",
+    "timestamp": 1792615600.008088,
+    "threat_category": "DDoS",
+    "attack_type": "DDoS_HTTP",
+    "confidence": 0.996,
+    "severity": "CRITICAL",
+    "recommended_action": "Deploy rate-limiting at edge ingress switch; activate upstream BGP Flowspec blackholing."
+  },
+  {
+    "alert_id": "8d6b46ad-e7ae-40f8-823f-71d4307ecde4",
+    "event_id": "e86e9e6e-5373-4f74-b369-d2a7fe90ec47",
+    "timestamp": 1792615600.02092,
+    "threat_category": "DDoS",
+    "attack_type": "DDoS_ICMP",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Deploy rate-limiting at edge ingress switch; activate upstream BGP Flowspec blackholing."
+  },
+  {
+    "alert_id": "7034a61d-1c07-4ffc-92a1-a5360c266f7d",
+    "event_id": "b19fa259-8f5e-406c-b802-58775319e5da",
+    "timestamp": 1792615600.0342631,
+    "threat_category": "DDoS",
+    "attack_type": "DDoS_HTTP",
+    "confidence": 0.9999,
+    "severity": "CRITICAL",
+    "recommended_action": "Deploy rate-limiting at edge ingress switch; activate upstream BGP Flowspec blackholing."
+  },
+  {
+    "alert_id": "6701ed3f-fafc-41ce-a8f8-6393292cebd5",
+    "event_id": "cc10acb6-3dcf-43b9-bf9f-d18d07a0a226",
+    "timestamp": 1792615600.047503,
+    "threat_category": "Malware",
+    "attack_type": "Backdoor",
+    "confidence": 0.9999,
+    "severity": "CRITICAL",
+    "recommended_action": "Quarantine host IP; terminate suspicious C2 beacon process and isolate network segment."
+  },
+  {
+    "alert_id": "e9f71f59-3b46-4b9a-9007-93a8681fec03",
+    "event_id": "fbd8f956-9368-4371-8fb5-9c4d63a52207",
+    "timestamp": 1792615600.060884,
+    "threat_category": "DDoS",
+    "attack_type": "DDoS_TCP",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Deploy rate-limiting at edge ingress switch; activate upstream BGP Flowspec blackholing."
+  },
+  {
+    "alert_id": "d10f6c38-a25a-432d-b672-1b4443bc3794",
+    "event_id": "ebef2eb7-4c76-4a8a-a194-cd3076584332",
+    "timestamp": 1792615600.0737011,
+    "threat_category": "Malware",
+    "attack_type": "Backdoor",
+    "confidence": 0.9999,
+    "severity": "CRITICAL",
+    "recommended_action": "Quarantine host IP; terminate suspicious C2 beacon process and isolate network segment."
+  },
+  {
+    "alert_id": "7027244d-e865-4f75-9e70-00783c25ebde",
+    "event_id": "4b3f8c9d-60d2-471b-a389-f17de963f810",
+    "timestamp": 1792615600.0992472,
+    "threat_category": "DDoS",
+    "attack_type": "DDoS_UDP",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Deploy rate-limiting at edge ingress switch; activate upstream BGP Flowspec blackholing."
+  },
+  {
+    "alert_id": "de81e34f-db2e-446d-907f-3a6caaa8824d",
+    "event_id": "f36ee1f4-f1c9-41b3-b5e9-f2ba1757181b",
+    "timestamp": 1792615600.111928,
+    "threat_category": "Malware",
+    "attack_type": "Ransomware",
+    "confidence": 0.9999,
+    "severity": "CRITICAL",
+    "recommended_action": "Quarantine host IP; terminate suspicious C2 beacon process and isolate network segment."
+  },
+  {
+    "alert_id": "6d6a9593-1c29-4f76-8a7b-665ef8d887e8",
+    "event_id": "706bca19-872e-4be2-a35a-3dd3c1a9cbb9",
+    "timestamp": 1792615600.1247292,
+    "threat_category": "Web_Attack",
+    "attack_type": "XSS",
+    "confidence": 0.9985,
+    "severity": "CRITICAL",
+    "recommended_action": "Block originating source IP on WAF; inspect application server payload logs."
+  },
+  {
+    "alert_id": "08ac7b88-6bfc-4988-b582-8843866d0b4c",
+    "event_id": "128c7e8b-afad-4d5b-8491-3a02b885de5d",
+    "timestamp": 1792615600.1372108,
+    "threat_category": "Web_Attack",
+    "attack_type": "Uploading",
+    "confidence": 0.9999,
+    "severity": "CRITICAL",
+    "recommended_action": "Block originating source IP on WAF; inspect application server payload logs."
+  },
+  {
+    "alert_id": "70e3d6ed-39e7-490f-93c1-dfff8175b80a",
+    "event_id": "b8cfdac7-0989-4675-8efd-4435341fa3aa",
+    "timestamp": 1792615600.150051,
+    "threat_category": "Reconnaissance",
+    "attack_type": "Vulnerability_scanner",
+    "confidence": 0.9997,
+    "severity": "CRITICAL",
+    "recommended_action": "Log probe signatures; monitor source IP for subsequent lateral movement attempts."
+  },
+  {
+    "alert_id": "997a2f7d-c7bf-4ed2-93bd-724a0ae14784",
+    "event_id": "642b29f1-e5cf-4f2d-a4e3-b952f20a6a2c",
+    "timestamp": 1792615600.163082,
+    "threat_category": "Web_Attack",
+    "attack_type": "XSS",
+    "confidence": 0.9998,
+    "severity": "CRITICAL",
+    "recommended_action": "Block originating source IP on WAF; inspect application server payload logs."
+  },
+  {
+    "alert_id": "a4af5dc0-41c2-4388-b07a-80687926e861",
+    "event_id": "94dbf45b-dbe3-4258-bd7a-413fc87030cc",
+    "timestamp": 1792615600.17629,
+    "threat_category": "DDoS",
+    "attack_type": "DDoS_ICMP",
+    "confidence": 0.9999,
+    "severity": "CRITICAL",
+    "recommended_action": "Deploy rate-limiting at edge ingress switch; activate upstream BGP Flowspec blackholing."
+  },
+  {
+    "alert_id": "4e65938a-c929-41c3-b834-254049b3c1f2",
+    "event_id": "d5f4bf5d-e7d0-464c-bff2-129a5e5437e0",
+    "timestamp": 1792615600.18902,
+    "threat_category": "Brute_Force",
+    "attack_type": "Password",
+    "confidence": 0.9999,
+    "severity": "CRITICAL",
+    "recommended_action": "Temporarily lock targeted account; enforce multi-factor authentication (MFA)."
+  },
+  {
+    "alert_id": "38c7bdb8-bfe7-4948-bd1a-031b6f1b5a28",
+    "event_id": "269b817f-669c-4927-89c6-048c6deccb95",
+    "timestamp": 1792615600.201911,
+    "threat_category": "Malware",
+    "attack_type": "Backdoor",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Quarantine host IP; terminate suspicious C2 beacon process and isolate network segment."
+  },
+  {
+    "alert_id": "4c4a0491-9a4f-4c92-9676-3dd4dc895ca3",
+    "event_id": "328b75c8-4e80-462e-8dbb-aa701d7b47e8",
+    "timestamp": 1792615600.228184,
+    "threat_category": "Web_Attack",
+    "attack_type": "SQL_injection",
+    "confidence": 0.9997,
+    "severity": "CRITICAL",
+    "recommended_action": "Block originating source IP on WAF; inspect application server payload logs."
+  },
+  {
+    "alert_id": "1311d46e-c42e-4e9d-97d0-6dc1b1d3d1a7",
+    "event_id": "1523db34-5c3b-4871-bd46-11ed5e4b72ad",
+    "timestamp": 1792615600.2409332,
+    "threat_category": "Malware",
+    "attack_type": "Ransomware",
+    "confidence": 0.7799,
+    "severity": "HIGH",
+    "recommended_action": "Quarantine host IP; terminate suspicious C2 beacon process and isolate network segment."
+  },
+  {
+    "alert_id": "368847c2-bea1-4082-9a90-c04e32f09756",
+    "event_id": "b5516d69-aab4-47ba-a725-4499161edeac",
+    "timestamp": 1792615600.266727,
+    "threat_category": "Reconnaissance",
+    "attack_type": "Vulnerability_scanner",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Log probe signatures; monitor source IP for subsequent lateral movement attempts."
+  },
+  {
+    "alert_id": "f70f5385-363c-46a9-bfbf-c298f6cf4bdc",
+    "event_id": "6a7d7421-061b-464d-a902-b6641d4b4625",
+    "timestamp": 1792615600.279488,
+    "threat_category": "Malware",
+    "attack_type": "Ransomware",
+    "confidence": 0.998,
+    "severity": "CRITICAL",
+    "recommended_action": "Quarantine host IP; terminate suspicious C2 beacon process and isolate network segment."
+  },
+  {
+    "alert_id": "4343baba-f462-4bd8-b2f9-e6d3984b2601",
+    "event_id": "dc96dafc-762b-4b44-84e0-b882ec39a289",
+    "timestamp": 1792615600.2922182,
+    "threat_category": "Web_Attack",
+    "attack_type": "XSS",
+    "confidence": 0.9997,
+    "severity": "CRITICAL",
+    "recommended_action": "Block originating source IP on WAF; inspect application server payload logs."
+  },
+  {
+    "alert_id": "44733a4b-36cf-47af-8ac3-155d98f55d7f",
+    "event_id": "665e3f11-b785-46e8-9a8d-25996a781980",
+    "timestamp": 1792615600.304829,
+    "threat_category": "DDoS",
+    "attack_type": "DDoS_ICMP",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Deploy rate-limiting at edge ingress switch; activate upstream BGP Flowspec blackholing."
+  },
+  {
+    "alert_id": "2d66cfb3-8903-4bb2-bf32-922651f95225",
+    "event_id": "679165f9-821a-484f-a0b3-980f33b9bbe9",
+    "timestamp": 1792615600.317648,
+    "threat_category": "DDoS",
+    "attack_type": "DDoS_UDP",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Deploy rate-limiting at edge ingress switch; activate upstream BGP Flowspec blackholing."
+  },
+  {
+    "alert_id": "ec6e799a-3248-4f33-beae-dde5a1322382",
+    "event_id": "7fe701b6-7cab-456a-b705-a797ecffb5a8",
+    "timestamp": 1792615600.330246,
+    "threat_category": "Malware",
+    "attack_type": "Ransomware",
+    "confidence": 0.9999,
+    "severity": "CRITICAL",
+    "recommended_action": "Quarantine host IP; terminate suspicious C2 beacon process and isolate network segment."
+  },
+  {
+    "alert_id": "270c337a-40da-44da-861d-a45d86711010",
+    "event_id": "044a0353-84bf-4782-96ea-03f21d05b3b8",
+    "timestamp": 1792615600.3429592,
+    "threat_category": "DDoS",
+    "attack_type": "DDoS_HTTP",
+    "confidence": 0.9994,
+    "severity": "CRITICAL",
+    "recommended_action": "Deploy rate-limiting at edge ingress switch; activate upstream BGP Flowspec blackholing."
+  },
+  {
+    "alert_id": "ce491b53-0cf9-43ec-8795-d77e89006be8",
+    "event_id": "d038acaa-464f-4f09-b09a-4d7a3e1c269f",
+    "timestamp": 1792615600.355463,
+    "threat_category": "DDoS",
+    "attack_type": "DDoS_ICMP",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Deploy rate-limiting at edge ingress switch; activate upstream BGP Flowspec blackholing."
+  },
+  {
+    "alert_id": "74ff292b-98c7-4280-bf14-56d889bee4ce",
+    "event_id": "ea633918-1832-4270-ab82-93ea296c913b",
+    "timestamp": 1792615600.368194,
+    "threat_category": "Web_Attack",
+    "attack_type": "SQL_injection",
+    "confidence": 0.9999,
+    "severity": "CRITICAL",
+    "recommended_action": "Block originating source IP on WAF; inspect application server payload logs."
+  },
+  {
+    "alert_id": "4d68226c-0eff-4cdc-8923-11f0df650066",
+    "event_id": "b4c292cb-087b-4e70-85fa-7a14000d4594",
+    "timestamp": 1792615600.380907,
+    "threat_category": "Web_Attack",
+    "attack_type": "Uploading",
+    "confidence": 0.9998,
+    "severity": "CRITICAL",
+    "recommended_action": "Block originating source IP on WAF; inspect application server payload logs."
+  },
+  {
+    "alert_id": "61b5df5c-24e9-4b3f-bc1c-98b59a9a87c2",
+    "event_id": "1b20bd26-b450-4468-a9f9-a81f5a6ff371",
+    "timestamp": 1792615600.393971,
+    "threat_category": "Reconnaissance",
+    "attack_type": "Port_Scanning",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Log probe signatures; monitor source IP for subsequent lateral movement attempts."
+  },
+  {
+    "alert_id": "739ff28c-c94c-4e8d-b8ef-c9761602e8b0",
+    "event_id": "575932ef-881d-4b20-b78b-7fdf525f5ee1",
+    "timestamp": 1792615600.406611,
+    "threat_category": "Reconnaissance",
+    "attack_type": "Port_Scanning",
+    "confidence": 0.9999,
+    "severity": "CRITICAL",
+    "recommended_action": "Log probe signatures; monitor source IP for subsequent lateral movement attempts."
+  },
+  {
+    "alert_id": "bd6f6b1a-c765-4637-90aa-183e7c44cc67",
+    "event_id": "fdab61df-10d9-470c-abed-8ad2947fcdf3",
+    "timestamp": 1792615600.4191082,
+    "threat_category": "Reconnaissance",
+    "attack_type": "Port_Scanning",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Log probe signatures; monitor source IP for subsequent lateral movement attempts."
+  },
+  {
+    "alert_id": "4900a865-5f8a-430d-8a01-e277d1ff011a",
+    "event_id": "ddf0910f-8e2d-4dd9-a2e4-2e16afd986b3",
+    "timestamp": 1792615600.4565701,
+    "threat_category": "Web_Attack",
+    "attack_type": "Uploading",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Block originating source IP on WAF; inspect application server payload logs."
+  },
+  {
+    "alert_id": "a8bfa9f6-cf64-4e49-9583-64d78687a98d",
+    "event_id": "b9462a47-b153-41e5-9b3a-c41f418b11f6",
+    "timestamp": 1792615600.4823139,
+    "threat_category": "Brute_Force",
+    "attack_type": "Password",
+    "confidence": 1.0,
+    "severity": "CRITICAL",
+    "recommended_action": "Temporarily lock targeted account; enforce multi-factor authentication (MFA)."
+  }
+]

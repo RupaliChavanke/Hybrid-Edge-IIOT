@@ -1,0 +1,13 @@
+canonical_name,definition,unit,edge_source,cic_source,transformation,status
+proto_tcp,Binary indicator whether flow protocol is Transmission Control Protocol (TCP),boolean / binary flag (0 or 1),derived: tcp.flags / tcp.dstport > 0,TCP,Binary cast,exact_match
+proto_udp,Binary indicator whether flow protocol is User Datagram Protocol (UDP),boolean / binary flag (0 or 1),derived: udp.port > 0 / udp.stream > 0,UDP,Binary cast,exact_match
+proto_icmp,Binary indicator whether flow protocol is Internet Control Message Protocol (ICMP),boolean / binary flag (0 or 1),derived: icmp.checksum > 0,ICMP,Binary cast,exact_match
+proto_http,Binary indicator whether flow carries Hypertext Transfer Protocol (HTTP),boolean / binary flag (0 or 1),derived: http.response > 0 / http.request.method is not empty,HTTP,Binary cast,exact_match
+proto_dns,Binary indicator whether flow carries Domain Name System (DNS) traffic,boolean / binary flag (0 or 1),derived: dns.qry.name is not empty / dns.qry.type > 0,DNS,Binary cast,exact_match
+proto_arp,Binary indicator whether flow protocol is Address Resolution Protocol (ARP),boolean / binary flag (0 or 1),derived: arp.opcode > 0,ARP,Binary cast,exact_match
+flag_fin,TCP FIN control flag presence,binary flag (0 or 1),tcp.connection.fin,fin_flag_number,Numeric float32 cast,exact_match
+flag_syn,TCP SYN control flag presence,binary flag (0 or 1),tcp.connection.syn,syn_flag_number,Numeric float32 cast,exact_match
+flag_rst,TCP RST control flag presence,binary flag (0 or 1),tcp.connection.rst,rst_flag_number,Numeric float32 cast,exact_match
+flag_ack,TCP ACK control flag presence,binary flag (0 or 1),tcp.flags.ack,ack_flag_number,Numeric float32 cast,exact_match
+packet_length,Observed packet / payload length,bytes,tcp.len,AVG,Standardized non-negative float32,compatible_approximation
+time_delta,Packet inter-arrival time / flow duration delta,seconds,udp.time_delta,IAT,Clipped non-negative float32,compatible_approximation

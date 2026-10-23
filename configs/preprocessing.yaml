@@ -1,0 +1,19 @@
+# Preprocessing & Feature Engineering Configuration
+
+cleaning:
+  replace_inf_with_nan: true
+  impute_strategy: "median"
+  drop_constant_features: true
+  variance_threshold: 0.0
+
+encoding:
+  categorical_strategy: "ordinal" # native for CatBoost, ordinal for XGB/LGBM
+  unknown_category_value: -1
+
+feature_selection:
+  method: "mutual_info" # Options: all, mutual_info, correlation_filter
+  correlation_threshold: 0.95
+  max_selected_features: 33
+
+harmonization:
+  strategy: "common_flow_subset" # common_flow_subset or source_specific
