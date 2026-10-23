@@ -1,0 +1,6 @@
+model_a,model_b,b_only_a_correct,c_only_b_correct,mcnemar_chi2,p_value,statistically_significant,scientific_interpretation
+Hybrid Ensemble,CatBoost,6,2,1.125,0.288844,False,Difference not statistically significant; models converge near Bayes ceiling (99.43%)
+Hybrid Ensemble,XGBoost,7,2,1.7778,0.182422,False,Difference not statistically significant; models converge near Bayes ceiling (99.43%)
+Hybrid Ensemble,LightGBM,2,0,0.5,0.4795,False,Difference not statistically significant; models converge near Bayes ceiling (99.43%)
+LightGBM,CatBoost,5,3,0.125,0.723674,False,Difference not statistically significant; models converge near Bayes ceiling (99.43%)
+XGBoost,CatBoost,7,8,0.0,1.0,False,Difference not statistically significant; models converge near Bayes ceiling (99.43%)

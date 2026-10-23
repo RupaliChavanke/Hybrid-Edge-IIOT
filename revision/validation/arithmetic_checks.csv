@@ -1,0 +1,28 @@
+table_id,entity,metric_checked,formula,recomputed_value,displayed_value,status
+Table VI,Backdoor,F1_Delta,98.57 - 98.57,+0.00,+0.00,PASS
+Table VI,DDoS_HTTP,F1_Delta,98.36 - 98.27,+0.09,+0.09,PASS
+Table VI,DDoS_ICMP,F1_Delta,100.00 - 100.00,+0.00,+0.00,PASS
+Table VI,DDoS_TCP,F1_Delta,100.00 - 100.00,+0.00,+0.00,PASS
+Table VI,DDoS_UDP,F1_Delta,100.00 - 100.00,+0.00,+0.00,PASS
+Table VI,Fingerprinting,F1_Delta,90.91 - 90.91,+0.00,+0.00,PASS
+Table VI,MITM,F1_Delta,83.87 - 53.23,+30.64,+30.64,PASS
+Table VI,Normal,F1_Delta,99.84 - 99.84,+0.00,+0.00,PASS
+Table VI,Password,F1_Delta,100.00 - 100.00,+0.00,+0.00,PASS
+Table VI,Port_Scanning,F1_Delta,98.81 - 95.54,+3.27,+3.27,PASS
+Table VI,Ransomware,F1_Delta,98.35 - 98.35,+0.00,+0.00,PASS
+Table VI,SQL_injection,F1_Delta,100.00 - 100.00,+0.00,+0.00,PASS
+Table VI,Uploading,F1_Delta,100.00 - 100.00,+0.00,+0.00,PASS
+Table VI,Vulnerability_scanner,F1_Delta,100.00 - 100.00,+0.00,+0.00,PASS
+Table VI,XSS,F1_Delta,98.34 - 98.24,+0.10,+0.10,PASS
+Table VI,Macro Total,F1_Delta,97.73 - 95.53,+2.20,+2.20,PASS
+Table VI,Total Support,Sum(Support),15 classes sum,23670,23670,PASS
+Table X,Clean Baseline,F1_Delta,97.73 - 97.73,0.00,0.00,PASS
+Table X,Gaussian sigma=0.01,F1_Delta,67.73 - 97.73,-30.00,-30.00,PASS
+Table X,Gaussian sigma=0.05,F1_Delta,49.89 - 97.73,-47.84,-47.84,PASS
+Table X,Dropout p=0.05,F1_Delta,87.56 - 97.73,-10.17,-10.17,PASS
+Table X,Dropout p=0.10,F1_Delta,80.00 - 97.73,-17.73,-17.73,PASS
+Table II,Train + Val + Test,Record Sum,110460 + 23670 + 23670,157800,157800,PASS
+Table II,Split Percentages,Ratio Check,70.0% / 15.0% / 15.0%,100.0%,100.0%,PASS
+Table VII,Ens(33) vs Ens(25),McNemar Chi2,(|119 - 58| - 1)^2 / (119 + 58),20.3390,20.3390,PASS
+Table VII,LGB(33) vs LGB(25),McNemar Chi2,(|116 - 59| - 1)^2 / (116 + 59),17.9200,17.9200,PASS
+Table VII,Ens(33) vs LGB(33),McNemar Chi2,(|2 - 1| - 1)^2 / (2 + 1),0.0000,0.0000,PASS

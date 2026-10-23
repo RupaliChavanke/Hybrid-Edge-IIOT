@@ -1,0 +1,9 @@
+comparison_id,pair_description,b_only_a_correct,c_only_b_correct,mcnemar_chi2,raw_p_value,delta_macro_f1,bootstrap_95_ci,holm_bonferroni_p_adj,statistical_conclusion
+STAT_01,Ensemble (K=33) vs. Ensemble (K=25),119,58,20.339,6.49e-06,+2.194 pp,"[+1.660, +2.832] pp",5.8e-05,REJECT H0 (Statistically Significant)
+STAT_02,LightGBM (K=33) vs. LightGBM (K=25),116,59,17.92,2.30e-05,+2.177 pp,"[+1.641, +2.813] pp",1.8e-04,REJECT H0 (Statistically Significant)
+STAT_03,Ensemble (K=33) vs. LightGBM (K=33),2,1,0.0,1.0000,+0.004 pp,"[-0.009, +0.019] pp",1.0000,FAIL TO REJECT H0 (No Significant Difference)
+STAT_04,Ensemble (K=33) vs. XGBoost (K=33),6,0,4.1667,0.0412,+0.026 pp,"[+0.009, +0.047] pp",0.2500,FAIL TO REJECT H0 after Holm-Bonferroni
+STAT_05,Ensemble (K=33) vs. CatBoost (K=33),6,2,1.125,0.2888,+0.056 pp,"[+0.000, +0.134] pp",1.0000,FAIL TO REJECT H0 (No Significant Difference)
+STAT_06,Ensemble (K=25) vs. LightGBM (K=25),1,4,0.8,0.3711,-0.013 pp,"[-0.034, +0.004] pp",1.0000,FAIL TO REJECT H0 (No Significant Difference)
+STAT_07,Ensemble (K=25) vs. XGBoost (K=25),7,3,0.9,0.3428,+0.017 pp,"[-0.009, +0.043] pp",1.0000,FAIL TO REJECT H0 (No Significant Difference)
+STAT_08,Ensemble (K=25) vs. CatBoost (K=25),7,3,0.9,0.3428,+0.055 pp,"[+0.004, +0.141] pp",1.0000,FAIL TO REJECT H0 (No Significant Difference)

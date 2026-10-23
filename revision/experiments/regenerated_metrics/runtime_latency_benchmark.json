@@ -1,0 +1,50 @@
+{
+  "CatBoost": {
+    "p50_latency_ms": 0.103,
+    "p95_latency_ms": 0.3302,
+    "p99_latency_ms": 0.5581,
+    "mean_latency_ms": 0.1773,
+    "throughput_events_per_sec": {
+      "batch_100": 279557.62,
+      "batch_500": 496380.4,
+      "batch_1000": 916031.09
+    },
+    "process_rss_mb": 264.34
+  },
+  "XGBoost": {
+    "p50_latency_ms": 0.2491,
+    "p95_latency_ms": 0.2889,
+    "p99_latency_ms": 0.5145,
+    "mean_latency_ms": 0.257,
+    "throughput_events_per_sec": {
+      "batch_100": 88041.11,
+      "batch_500": 271431.85,
+      "batch_1000": 294579.79
+    },
+    "process_rss_mb": 264.88
+  },
+  "LightGBM": {
+    "p50_latency_ms": 0.2901,
+    "p95_latency_ms": 0.3557,
+    "p99_latency_ms": 0.458,
+    "mean_latency_ms": 0.2996,
+    "throughput_events_per_sec": {
+      "batch_100": 90692.67,
+      "batch_500": 144076.65,
+      "batch_1000": 154365.65
+    },
+    "process_rss_mb": 265.25
+  },
+  "Hybrid_Ensemble": {
+    "p50_latency_ms": 1.3921,
+    "p95_latency_ms": 1.5605,
+    "p99_latency_ms": 1.7679,
+    "mean_latency_ms": 1.4102,
+    "throughput_events_per_sec": {
+      "batch_100": 27717.47,
+      "batch_500": 73197.95,
+      "batch_1000": 84554.08
+    },
+    "process_rss_mb": 266.84
+  }
+}
